@@ -1,0 +1,27 @@
+<div class="container">
+    <p-table [paginator]="true" [rows]="5" [value]="[1,2,3,4]">
+    <!-- <p-table [value]="wishlistItems"> -->
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width:25%" class="h1">My Wishlist</th>
+          <th style="width:25%">Place_name</th>
+          <th style="width:30%">Description</th>
+          <th style="width:20%">Action</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body">
+        <!-- <ng-template pTemplate="body" let-item> -->
+        <tr>
+          <td class="align"><img src="../../../assets/images/logo.png" width="100"></td>
+          <!-- <td><img [src]="item.image" width="100"></td> -->
+          <td>item.name</td>
+          <!-- <td>{{item.name}}</td> -->
+          <td>item.description</td>
+          <!-- <td>{{item.description}}</td> -->
+          <td><button>Delete from wishlit</button></td>
+          <!-- <td><button (click)="removeFromWishlist(item)">Supprimer de la liste de favoris</button></td> -->
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  

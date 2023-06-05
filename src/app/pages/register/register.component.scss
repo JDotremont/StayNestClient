@@ -1,0 +1,41 @@
+:host {
+    width: 100%;
+    height: 100%;
+    display: block;
+    > .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        > form {
+            width: 75%;
+            height: 75%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            gap: 1rem;
+            > label {
+                font-weight: bold;
+            }
+            > input {
+                width: 50%;
+                height: 2rem;
+                border: 1px solid #D2691E;
+                border-radius: 0.25rem;
+                padding: 0.25rem;
+            }
+            > button {
+                width: 25%;
+                height: 2rem;
+                border-radius: 0.25rem;
+                padding: 0.25rem;
+                background-color: #D2691E;
+                color: #ffffff;
+                font-weight: bold;
+                cursor: pointer;}
+        }
+    }
+}
