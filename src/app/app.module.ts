@@ -22,6 +22,9 @@ import { MessageListComponent } from './message-list/message-list.component';
 import { MessageDetailComponent } from './message-detail/message-detail.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { TableModule } from 'primeng/table';
+import { AccountComponent } from './pages/account/account.component';
+import { TripsComponent } from './pages/trips/trips.component';
+import { HelpComponent } from './pages/help/help.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { TableModule } from 'primeng/table';
     MessagesComponent,
     MessageListComponent,
     MessageDetailComponent,
-    WishlistComponent
+    WishlistComponent,
+    AccountComponent,
+    TripsComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

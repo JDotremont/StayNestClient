@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>My Account</h1>
+    
+    <div class="user-info">
+      <h2>Personnal Informations</h2>
+      <!-- <p>Nom: {{user.name}}</p> -->
+      <p>Firstname: user.firstname</p>
+      <p>Lastname: user.lastname</p>
+      <!-- <p>Email: {{user.email}}</p> -->
+      <p>Email: user.email</p>
+      <!-- <button (click)="editMode = true">Modifier Mes Informations</button> -->
+      <button >Update my personnal Informations</button>
+    </div>
+    
+    <!-- <div class="edit-info" *ngIf="editMode"> -->
+    <div class="edit-info">
+      <h2>Update my personnal Informations</h2>
+      <!-- <form [formGroup]="userForm" (ngSubmit)="onSubmit()"> -->
+        <form >
+        <label for="firstname">Firstname:</label>
+        <input id="firstname" type="text" formControlName="firstname">
+        <label for="lastname">Lastname:</label>
+        <input id="lastname" type="text" formControlName="lastname">
+        <label for="email">Email:</label>
+        <input id="email" type="email" formControlName="email">
+        <button type="submit">Save</button>
+        <!-- <button (click)="editMode = false">Annuler</button> -->
+        <button>Cancel</button>
+      </form>
+    </div>
+  
+    <!-- <div *ngIf="!user.isHost">
+      <button (click)="switchToHostMode()">Devenir Hôte</button>
+    </div> -->
+    <div >
+        <button >Host mode</button>
+      </div>
+  
+    <div >
+    <!-- <div *ngIf="user.isHost"> -->
+      <h2>My rents</h2>
+      <div >
+    <!-- <div *ngFor="let property of userProperties"> -->
+        <!-- property information -->
+      </div>
+    </div>
+  
+  </div>
+  
