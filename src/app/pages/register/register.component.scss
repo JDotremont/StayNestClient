@@ -17,6 +17,9 @@
             align-items: center;
             font-size: 1rem;
             gap: 1rem;
+            border: #D2691E 2px solid;
+            border-radius: 1rem;
+            box-shadow: 0 2px 2px rgba(210, 105, 30, 0.12), 0 4px 2px rgba(210, 105, 30, 0.24);
             > label {
                 font-weight: bold;
             }

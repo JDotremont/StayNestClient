@@ -1,11 +1,61 @@
 :host {
-    display: block;
+    display: flex;
     width: 100%;
     height: 100%;
+    justify-content: center;
+    align-items: center;
     > .container {
+        width: 75%;
+        height: 75%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        border: #D2691E 2px solid;
+        border-radius: 1rem;
+        box-shadow: 0 2px 2px rgba(210, 105, 30, 0.12), 0 4px 2px rgba(210, 105, 30, 0.24);
     }
+}
+
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    color: #D2691E;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: oblique;
+}
+
+h2 {
+    color: #D2691E;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-style: oblique;
+    text-align: center;
+}
+
+.help {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 75%;
+    > .faq {
+        width: 30%;
+        height: 100%;
+    }
+    > .guide {
+        width: 30%;
+        height: 100%;
+    }
+    > .tips {
+        width: 30%;
+        height: 100%;
+    }
+}
+
+.contact {
+    width: 75%;
 }

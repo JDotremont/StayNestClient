@@ -25,6 +25,14 @@ import { TableModule } from 'primeng/table';
 import { AccountComponent } from './pages/account/account.component';
 import { TripsComponent } from './pages/trips/trips.component';
 import { HelpComponent } from './pages/help/help.component';
+import { GalleriaModule } from 'primeng/galleria';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { ButtonModule } from 'primeng/button';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
   declarations: [
@@ -55,7 +63,15 @@ import { HelpComponent } from './pages/help/help.component';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    TableModule
+    TableModule,
+    GalleriaModule,
+    OverlayPanelModule,
+    ButtonModule,
+    SplitButtonModule,
+    DialogModule,
+    DropdownModule,
+    InputTextModule,
+    MultiSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
