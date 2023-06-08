@@ -1,12 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { CarouselStateService } from '../../services/carousel-state.service';
+import { AccountMenuStateService } from '../../services/account-menu-state.service';
 
 @Component({
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.scss']
 })
-export class AccountComponent {
+export class AccountComponent implements OnInit{
+  constructor(
+    public accountMenuStateService: AccountMenuStateService,
+    public carouselStateService: CarouselStateService
+    ) { }
+
+  ngOnInit() {
+    this.accountMenuStateService.setActive(true);
+    this.carouselStateService.setActive(false);
+  }
   userForm = new FormGroup({
     firstname: new FormControl([]),
     lastname: new FormControl([]),

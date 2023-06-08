@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="align">My rents</h1>
+    <p-table [paginator]="true" [rows]="5" [value]="[1,2,3,4,5]">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Property's name</th>
+                <th>Begining date</th>
+                <th>Ending date</th>
+                <th>Duration</th>
+                <th>Cost (€)</th>
+                <th>Action</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-booking>
+            <tr>
+                <td>booking.property.name</td>
+                <td>booking.startDate | date</td>
+                <td>booking.endDate | date</td>
+                <td>booking.duration</td>
+                <td>booking.cost</td>
+                <!-- <td><button (click)="cancelBooking(booking)" *ngIf="booking.isFuture">Annuler</button></td> -->
+                <td><p-button label="Cancel" styleClass="p-button-warning"></p-button></td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

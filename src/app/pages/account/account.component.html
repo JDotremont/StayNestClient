@@ -1,10 +1,7 @@
 <div class="container">
   <div class="header">
     <h1 class="align">My Account</h1>
-    <!-- <p-splitButton label="Warning" [model]="items" styleClass="p-button-raised p-button-warning mr-2 mb-2"></p-splitButton> -->
   </div>
-    
-    <div class="user-info">
       <h2>Personnal Informations</h2>
       <!-- <p>Nom: {{user.name}}</p> -->
       <p>Firstname: user.firstname</p>
@@ -12,7 +9,6 @@
       <!-- <p>Email: {{user.email}}</p> -->
       <p>Email: user.email</p>
       <p>Phone: user.phone</p>
-      <!-- <button (click)="editMode = true">Modifier Mes Informations</button> -->
       <div class="div_button">
       <p-button (click)="showDialog()" icon="pi pi-external-link" label="Update personnal informations" styleClass="p-button-warning"></p-button>
       <p-dialog header="Update my personnal Informations" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw', height: '50vh' }" [draggable]="false" [resizable]="false">
@@ -31,47 +27,6 @@
           </form>
         </div>
       </p-dialog>
-
-      <p-button (click)="showDialog2()" icon="pi pi-external-link" label="Update my host Informations" styleClass="p-button-warning"></p-button>
-      <p-dialog header="Update my host Informations" [(visible)]="visible2" [modal]="true" [style]="{ width: '50vw', height: '50vh' }" [draggable]="false" [resizable]="false">
-        <div class="edit-info">
-          <form [formGroup]="propertyForm">
-            <label for="name">Property Name</label>
-            <input id="name" placeholder="Property Name" formControlName="name">
-            <label for="address">Address</label>
-            <input id="address" placeholder="Address" formControlName="address">
-            <label for="types">Property Type</label>
-            <p-dropdown id="types" [options]="propertyTypes" placeholder="Property Type" formControlName="type"></p-dropdown>
-            <label for="guests">Number of guests</label>
-            <input id="guests" type="number">
-            <label for="priceByNight">Price By Night</label>
-            <input id="priceByNight" type="number" placeholder="Price By Night" formControlName="priceByNight">
-            <label for="priceByWeek">Price By Week</label>
-            <input id="priceByWeek" type="number" placeholder="Price By Week" formControlName="priceByWeek">
-            <label for="description">Description</label>
-            <textarea id="description" placeholder="Description"></textarea>
-            <label for="rooms">Number of rooms</label>
-            <input id="rooms" type="number" placeholder="Number of rooms" >
-            <label for="bathrooms">Number of bathrooms</label>
-            <input id="bathrooms" type="number" placeholder="Number of bathrooms">
-            <label for="amenities">Amenities</label>
-            <p-multiSelect id="amenities" [options]="amenities" placeholder="Amenities"></p-multiSelect>
-            <p-button type="submit" label="Submit" styleClass="p-button-warning"></p-button>
-          </form>
-          
-        </div>
-      </p-dialog>
       </div>
-    </div>
-    
-    <div >
-    <!-- <div *ngIf="user.isHost"> -->
-      <h2 class="align">My rents</h2>
-      <div >
-    <!-- <div *ngFor="let property of userProperties"> -->
-        <!-- property information -->
-      </div>
-    </div>
-  
   </div>
   

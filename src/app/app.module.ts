@@ -33,6 +33,12 @@ import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { RentsComponent } from './pages/rents/rents.component';
+import { MypropertiesComponent } from './pages/myproperties/myproperties.component';
+import { AccountMenuComponent } from './pages/account-menu/account-menu.component';
+import { PropertyAddComponent } from './pages/property-add/property-add.component';
+import { CalendarModule } from 'primeng/calendar';
+import { PlaceComponent } from './pages/place/place.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +53,12 @@ import { MultiSelectModule } from 'primeng/multiselect';
     WishlistComponent,
     AccountComponent,
     TripsComponent,
-    HelpComponent
+    HelpComponent,
+    RentsComponent,
+    MypropertiesComponent,
+    AccountMenuComponent,
+    PropertyAddComponent,
+    PlaceComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +82,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
     DialogModule,
     DropdownModule,
     InputTextModule,
-    MultiSelectModule
+    MultiSelectModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

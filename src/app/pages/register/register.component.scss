@@ -17,7 +17,7 @@
             align-items: center;
             font-size: 1rem;
             gap: 1rem;
-            border: #D2691E 2px solid;
+            border: #F59E0B 2px solid;
             border-radius: 1rem;
             box-shadow: 0 2px 2px rgba(210, 105, 30, 0.12), 0 4px 2px rgba(210, 105, 30, 0.24);
             > label {
@@ -26,7 +26,7 @@
             > input {
                 width: 50%;
                 height: 2rem;
-                border: 1px solid #D2691E;
+                border: 1px solid #F59E0B;
                 border-radius: 0.25rem;
                 padding: 0.25rem;
             }
@@ -35,10 +35,22 @@
                 height: 2rem;
                 border-radius: 0.25rem;
                 padding: 0.25rem;
-                background-color: #D2691E;
+                background-color: #F59E0B;
                 color: #ffffff;
                 font-weight: bold;
                 cursor: pointer;}
         }
     }
+}
+
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    color: #F59E0B;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: oblique;
+    padding-bottom: 2rem;
 }

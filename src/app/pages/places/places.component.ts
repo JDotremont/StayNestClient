@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
 
+import { CarouselStateService } from '../../services/carousel-state.service';
+
 @Component({
   templateUrl: './places.component.html',
   styleUrls: ['./places.component.scss']
 })
 export class PlacesComponent {
+    constructor(private carouselStateService: CarouselStateService) { }
+
+    ngOnInit() {
+      this.carouselStateService.setActive(true);
+    }
   places = [
     'assets/images/styles/camping.png',
     'assets/images/styles/castle.png',

@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="header">
+        <div class="placename">
+            <h1 class="align">Place Name</h1>
+        </div>
+        <div class="place-sum-infos">
+            <p>Wellin, Province de Namur, Belgium</p>
+            <i class="pi pi-heart-fill"></i>
+        </div>
+    </div>
+    <div class="map-photos">
+        <div class="map">
+            MAP
+        </div>
+        <div class="photos">
+            <p-galleria [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px' }" [numVisible]="7" [circular]="true"> 
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="item.itemImageSrc" style="width: 100%; display: block;"/>
+                </ng-template>
+                <ng-template pTemplate="thumbnail" let-item>
+                    <div class="grid grid-nogutter justify-content-center">
+                        <img [src]="item.thumbnailImageSrc" style="display: block;"/>
+                    </div>
+                </ng-template>
+            </p-galleria>
+        </div>
+    </div>
+    <div class="main">
+        <div class="place-booking-infos">
+            <div class="price-night">
+                79€ / night
+            </div>
+            <div class="booking-infos">
+                <div class="startdate">
+                    <label for="startDate">Start date:</label>
+                    <p-calendar id="startDate" [(ngModel)]="date" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"></p-calendar>
+                </div>
+                <div class="enddate">
+                    <label for="endDate">End date:</label>
+                    <p-calendar id="endDate" [(ngModel)]="date" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"></p-calendar>
+                </div>
+                <div class="numguests">
+                    <label for="numberOfGuests">Number of guests:</label>
+                    <input id="numberOfGuests" type="number" >
+                </div>
+            </div>
+            <div class="booking-button">
+                <p-button type="submit" label="Book" styleClass="p-button-warning"></p-button>
+            </div>
+            <div class="price-infos">
+                <div class="price">
+                    <p>79€ x 3 nights</p>
+                    <p>237€</p>
+                </div>
+                <div class="cleaning">
+                    <p>Cleaning fee</p>
+                    <p>20€</p>
+                </div>
+                <div class="service">
+                    <p>Service fee</p>
+                    <p>20€</p>
+                </div>
+            </div>
+            <div class="price-total">
+                <div class="total">
+                    <p>Total</p>
+                    <p>277€</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="place-info-main">
+            <div class="description">
+                <h2>Description</h2>
+                <p>L
+            </div>
+            <div class="property-type">
+                <h2>Property type</h2>
+                <p>House</p>
+            </div>
+            <div class="Number of guests">
+                <h2>Number of Guests</h2>
+                <p>4</p>
+            </div>
+            <div class="bedrooms">
+                <h2>Bedrooms</h2>
+                <p>2</p>
+            <div class="amenities">
+                <h2>Amenities</h2>
+                <p>Wifi</p>
+                <p>TV</p>
+                <p>Heating</p>
+                <p>Washing machine</p>
+                <p>Free parking</p>
+                <p>Iron</p>
+                <p>Essentials</p>
+                <p>Shampoo</p>
+                <p>Hair dryer</p>
+                <p>Smoke detector</p>
+                <p>Carbon monoxide detector</p>
+                <p>First aid kit</p>
+                <p>Fire extinguisher</p>
+            </div>
+            <div class="house-rules">
+                <h2>House rules</h2>
+                <p>No smoking</p>
+                <p>No pets</p>
+                <p>No parties or events</p>
+                <p>Check-in time is : 3PM - 10PM </p>
+                <p>check out by : 11AM</p>
+            </div>
+        </div>
+    </div>
+</div>

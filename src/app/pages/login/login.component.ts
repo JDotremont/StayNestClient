@@ -1,16 +1,25 @@
-// login.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CarouselStateService } from '../../services/carousel-state.service';
+import { AccountMenuStateService } from '../../services/account-menu-state.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
+  ngOnInit() {
+    this.carouselStateService.setActive(true);
+    this.accountMenuStateService.setActive(false);
+  }
+
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    public carouselStateService: CarouselStateService,
+    public accountMenuStateService: AccountMenuStateService,
+    private formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]

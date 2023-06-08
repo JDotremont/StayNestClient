@@ -1,0 +1,48 @@
+<div class="container">
+    <form [formGroup]="propertyForm">
+      <label for="name">Property Name</label>
+      <input id="name" placeholder="Property Name" formControlName="name">
+      <label for="address">Address</label>
+      <input id="address" placeholder="Address" formControlName="address">
+      <label for="types">Property Type</label>
+      <p-dropdown id="types" [options]="propertyTypes" placeholder="Property Type" formControlName="type"></p-dropdown>
+      <label for="amenities">Amenities</label>
+      <p-multiSelect id="amenities" [options]="amenities" placeholder="Amenities"></p-multiSelect>
+      <label for="guests">Number of guests</label>
+      <input id="guests" type="number">
+      <label for="priceByNight">Price By Night</label>
+      <input id="priceByNight" type="number" placeholder="Price By Night" formControlName="priceByNight">
+      <label for="priceByWeek">Price By Week</label>
+      <input id="priceByWeek" type="number" placeholder="Price By Week" formControlName="priceByWeek">
+      <label for="description">Description</label>
+      <textarea id="description" placeholder="Description"></textarea>
+      <label for="rooms">Number of rooms</label>
+      <input id="rooms" type="number" placeholder="Number of rooms" >
+      <label for="bathrooms">Number of bathrooms</label>
+      <input id="bathrooms" type="number" placeholder="Number of bathrooms">
+      <label for="rouseRules">House rules</label>
+      <textarea id="houseRules" placeholder="House rules"></textarea>
+      <div class="checkbox">
+        <label for="allowChildren">Allow Children</label>
+        <input type="checkbox" name="allowChildren" id="allowChildren">
+        <label for="allowPets">Allow Pets</label>
+        <input type="checkbox" name="allowPets" id="allowPets">
+        <label for="allowSmoking">Allow Smoking</label>
+        <input type="checkbox" name="allowSmoking" id="allowSmoking">
+        <label for="allowParties">Allow Parties</label>
+        <input type="checkbox" name="allowParties" id="allowParties">
+      </div>
+      <label for="checkinTime">Check-in Time</label>
+      <input id="checkinTime" type="time" placeholder="Check-in Time">
+      <label for="checkoutTime">Check-out Time</label>
+      <input id="checkoutTime" type="time" placeholder="Check-out Time">
+      <label for="minNight">Min of night</label>
+      <input id="minNight" type="number" placeholder="Min of night">
+      <label for="maxNight">Max of night</label>
+      <input id="maxNight" type="number" placeholder="Max of night">
+        
+        
+      <p-button type="submit" label="Submit" styleClass="p-button-warning"></p-button>
+    </form>
+    
+  </div>

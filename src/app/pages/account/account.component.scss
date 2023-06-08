@@ -11,7 +11,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: #D2691E 2px solid;
+        border: #F59E0B 2px solid;
         border-radius: 1rem;
         box-shadow: 0 2px 2px rgba(210, 105, 30, 0.12), 0 4px 2px rgba(210, 105, 30, 0.24);
         
@@ -25,7 +25,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: #D2691E 1px solid;
+    border: #F59E0B 1px solid;
     border-radius: 1rem;
     box-shadow: 0 2px 2px rgba(210, 105, 30, 0.12), 0 4px 2px rgba(210, 105, 30, 0.24);
 }
@@ -36,7 +36,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: #D2691E 2px solid;
+    border: #F59E0B 2px solid;
     border-radius: 1rem;
     box-shadow: 0 2px 2px rgba(210, 105, 30, 0.12), 0 4px 2px rgba(210, 105, 30, 0.24);
 }
@@ -55,7 +55,7 @@ form {
     > input {
         width: 50%;
         height: 2rem;
-        border: 1px solid #D2691E;
+        border: 1px solid #F59E0B;
         border-radius: 0.25rem;
         padding: 0.25rem;
     }
@@ -64,7 +64,7 @@ form {
         height: 2rem;
         border-radius: 0.25rem;
         padding: 0.25rem;
-        background-color: #D2691E;
+        background-color: #F59E0B;
         color: #ffffff;
         font-weight: bold;
         cursor: pointer;}
@@ -73,13 +73,13 @@ form {
 .ui-dropdown    {
     width:100% !important;
     height: 2rem !important;
-    border: 1px solid #D2691E !important;
+    border: 1px solid #F59E0B !important;
     border-radius: 0.25rem !important;
     padding: 0.25rem !important;;   
   } 
 
 .ui-dropdown:hover{
-    border: 1px solid #D2691E !important;
+    border: 1px solid #F59E0B !important;
     border-radius: 0.25rem !important;
     padding: 0.25rem !important;;   
   }
@@ -90,19 +90,20 @@ form {
     justify-content: center;
     align-items: center;
     padding-top: 1rem;
-    color: #D2691E;
+    color: #F59E0B;
     font-size: 2rem;
     font-weight: 600;
     font-style: oblique;
+    padding-bottom: 2rem;
 }
 
 .div_button {
     width: 75%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     padding-top: 1rem;
-    color: #D2691E;
+    color: #F59E0B;
     font-size: 2rem;
     font-weight: 600;
     font-style: oblique;

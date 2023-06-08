@@ -3,17 +3,18 @@ import { CarouselStateService } from '../../services/carousel-state.service';
 import { AccountMenuStateService } from '../../services/account-menu-state.service';
 
 @Component({
-  templateUrl: './messages.component.html',
-  styleUrls: ['./messages.component.scss']
+  selector: 'app-properties',
+  templateUrl: './myproperties.component.html',
+  styleUrls: ['./myproperties.component.scss']
 })
-export class MessagesComponent implements OnInit{
+export class MypropertiesComponent implements OnInit{
   constructor(
-    public carouselStateService: CarouselStateService,
+    private carouselStateService: CarouselStateService,
     public accountMenuStateService: AccountMenuStateService
     ) { }
 
   ngOnInit() {
-    this.carouselStateService.setActive(true);
-    this.accountMenuStateService.setActive(false);
+    this.carouselStateService.setActive(false);
+    this.accountMenuStateService.setActive(true);
   }
 }

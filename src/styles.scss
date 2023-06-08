@@ -1,21 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
 
-
-html, body { min-height: 100vh; 
-    // background-color: #B22222;
-    background-color: #D2691E;
-    // background-color: #F5F5DC;
+html, body { 
+    min-height: 100vh; 
+    background-color: #F59E0B;
+    text-decoration: none;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    font-family: var(--font-family); 
+}
+
+a {
+    text-decoration: none;
+    color: #F59E0B;
+}
 
 .mat-mdc-button, .mat-mdc-outlined-button {
     --mat-mdc-button-persistent-ripple-color: transparent;
     --mat-mdc-button-ripple-color: transparent;
-  }
-
-
-body {
-    font-family: var(--font-family);
 }
-
-@import "primeicons/primeicons.css";

@@ -12,6 +12,7 @@
             width: 75%;
             height: 75%;
             display: flex;
+            flex-wrap: wrap;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -23,12 +24,24 @@
             > label {
                 font-weight: bold;
             }
-            > input {
-                width: 50%;
+            > input, textarea {
+                width: 40%;
                 height: 2rem;
                 border: 1px solid #F59E0B;
                 border-radius: 0.25rem;
                 padding: 0.25rem;
+            }
+            > textarea {
+                height: 6rem;
+            }
+            > .checkbox {
+                width: 40%;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                > label {
+                    font-weight: bold;
+                }
             }
             > button {
                 width: 25%;
@@ -41,16 +54,4 @@
                 cursor: pointer;}
         }
     }
-}
-
-.align {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1rem;
-    color: #F59E0B;
-    font-size: 2rem;
-    font-weight: 600;
-    font-style: oblique;
-    padding-bottom: 2rem;
 }

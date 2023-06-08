@@ -8,6 +8,10 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { AccountComponent } from './pages/account/account.component';
 import { TripsComponent } from './pages/trips/trips.component';
 import { HelpComponent } from './pages/help/help.component';
+import { RentsComponent } from './pages/rents/rents.component';
+import { MypropertiesComponent } from './pages/myproperties/myproperties.component';
+import { PropertyAddComponent } from './pages/property-add/property-add.component';
+import { PlaceComponent } from './pages/place/place.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/places", pathMatch: "full"},
@@ -18,7 +22,11 @@ const routes: Routes = [
   {path: "wishlist", component: WishlistComponent},
   {path: "account", component: AccountComponent},
   {path: "trips", component: TripsComponent},
-  {path: "help", component: HelpComponent}
+  {path: "help", component: HelpComponent},
+  {path: "rents", component: RentsComponent},
+  {path: "properties", component: MypropertiesComponent},
+  {path: "add-property", component: PropertyAddComponent},
+  {path: "place", component: PlaceComponent},
   ];
 
 @NgModule({

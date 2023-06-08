@@ -5,12 +5,30 @@
 
   <div class="search">
     <div class="searchZone">
-      SEARCH
+        <p-button (click)="showDialog()" label="Where're you going next ... ? " icon="pi pi-search" styleClass="p-button-rounded p-button-warning p-button-outlined"></p-button>
+        <p-dialog header="Where're you going next ?" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw', height: '50vh' }" [draggable]="false" [resizable]="false">
+          <div class="edit-info">
+            <form [formGroup]="searchForm">
+              <label for="country">Country:</label>
+              <input id="country" type="text" >
+              <label for="city">City:</label>
+              <input id="city" type="text" >
+              <label for="startDate">Start Date:</label>
+              <p-calendar [(ngModel)]="date" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"></p-calendar>
+              <label for="endDate">end Date:</label>
+              <p-calendar [(ngModel)]="date" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"></p-calendar>
+              <label for="numberOfGuests">Number of guests:</label>
+              <input id="numberOfGuests" type="number" >
+
+              <p-button type="submit" label="Search for happiness" styleClass="p-button-warning"></p-button>
+            </form>
+          </div>
+        </p-dialog>
     </div>
   </div>
 
   <div class="menu">
-    <button mat-button [matMenuTriggerFor]="menu"><img src="../assets/images/menu.png" width="25%"></button>
+    <button mat-button [matMenuTriggerFor]="menu"><img src="../assets/images/menu.png" width="20%"></button>
     <mat-menu #menu="matMenu">
     <button mat-menu-item><a routerLink="register">Register</a></button>
     <button mat-menu-item><a routerLink="login">Login</a></button>
@@ -26,7 +44,8 @@
 
 <div class="main">
   <div class="style">
-    <app-carousel></app-carousel>
+    <app-carousel *ngIf="(carouselStateService.isActive$) | async"></app-carousel>
+    <app-account-menu *ngIf="(accountMenuStateService.isAccount$) | async"></app-account-menu>
   </div>
   <div class="items">
       <router-outlet></router-outlet>

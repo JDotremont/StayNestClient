@@ -2,19 +2,11 @@
     width: 100%;
     height: 100%;
     display: block;
-    
-}
-
-p-table {
-    height: 50%;
 }
 
 .h1 {
-    font-size:2rem;
-    font-weight: 600;
     margin: 1rem;
     text-align: center;
-    font-style: oblique;
 }
 
 button {
@@ -40,4 +32,8 @@ button {
     font-size: 2rem;
     font-weight: 600;
     font-style: oblique;
+}
+
+td {
+    padding: 1rem;
 }
