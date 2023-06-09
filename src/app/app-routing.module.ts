@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: "rents", component: RentsComponent},
   {path: "properties", component: MypropertiesComponent},
   {path: "add-property", component: PropertyAddComponent},
-  {path: "place", component: PlaceComponent},
+  {path: "place/:id", component: PlaceComponent},
   ];
 
 @NgModule({

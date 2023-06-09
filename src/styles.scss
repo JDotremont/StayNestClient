@@ -19,3 +19,11 @@ a {
     --mat-mdc-button-persistent-ripple-color: transparent;
     --mat-mdc-button-ripple-color: transparent;
 }
+
+.width {
+    width: 30%;
+    .p-multiselect, .p-dropdown {
+        width: 100% !important;
+        border: #F59E0B 1px solid !important;
+    }
+}

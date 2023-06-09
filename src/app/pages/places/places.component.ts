@@ -1,38 +1,31 @@
 import { Component } from '@angular/core';
-
 import { CarouselStateService } from '../../services/carousel-state.service';
+import { PlacesService } from 'src/app/services/places.service';
 
 @Component({
   templateUrl: './places.component.html',
   styleUrls: ['./places.component.scss']
 })
 export class PlacesComponent {
-    constructor(private carouselStateService: CarouselStateService) { }
+    constructor(
+      private carouselStateService: CarouselStateService,
+      private placesService: PlacesService,
+      ) { }
 
     ngOnInit() {
       this.carouselStateService.setActive(true);
+      this.placesService.getPlaces().subscribe({
+        next: data => {
+          this.places = data;
+        },
+        error: error => {
+          console.error('There was an error!', error);
+        },
+        complete: () => console.log('Done')
+      }
+      )
     }
-  places = [
-    'assets/images/styles/camping.png',
-    'assets/images/styles/castle.png',
-    'assets/images/styles/bnb.png',
-    'assets/images/styles/cottage.png',
-    'assets/images/styles/room.png',
-    'assets/images/styles/farm.png',
-    'assets/images/styles/countryside.png',
-    'assets/images/styles/dome.png',
-    'assets/images/styles/golf.png',
-    'assets/images/styles/hot.png',
-    'assets/images/styles/lake.png',
-    'assets/images/styles/luxe.png',
-    'assets/images/styles/mill.png',
-    'assets/images/styles/old.png',
-    'assets/images/styles/onwater.png',
-    'assets/images/styles/pool.png',
-    'assets/images/styles/seaside.png',
-    'assets/images/styles/treehouse.png',
-    'assets/images/styles/winery.png',
-  ];
+  places: any[] = [ ];
 
   images = [
     'https://picsum.photos/200/300',

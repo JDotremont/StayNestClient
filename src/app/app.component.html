@@ -10,15 +10,15 @@
           <div class="edit-info">
             <form [formGroup]="searchForm">
               <label for="country">Country:</label>
-              <input id="country" type="text" >
+              <input id="country" type="text" formControlName="country">
               <label for="city">City:</label>
-              <input id="city" type="text" >
+              <input id="city" type="text" formControlName="city">
               <label for="startDate">Start Date:</label>
-              <p-calendar [(ngModel)]="date" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"></p-calendar>
+              <p-calendar formControlName="startDate" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true" style="width: 40% !important;"></p-calendar>
               <label for="endDate">end Date:</label>
-              <p-calendar [(ngModel)]="date" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"></p-calendar>
+              <p-calendar formControlName="endDate" [minDate]="minDate" [maxDate]="maxDate" [readonlyInput]="true"></p-calendar>
               <label for="numberOfGuests">Number of guests:</label>
-              <input id="numberOfGuests" type="number" >
+              <input formControlName="numberOfGuests" id="numberOfGuests" type="number" >
 
               <p-button type="submit" label="Search for happiness" styleClass="p-button-warning"></p-button>
             </form>

@@ -39,6 +39,7 @@ import { AccountMenuComponent } from './pages/account-menu/account-menu.componen
 import { PropertyAddComponent } from './pages/property-add/property-add.component';
 import { CalendarModule } from 'primeng/calendar';
 import { PlaceComponent } from './pages/place/place.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { PlaceComponent } from './pages/place/place.component';
     PlaceComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

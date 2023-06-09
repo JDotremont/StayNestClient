@@ -1,22 +1,30 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WishlistService {
 
-  wishlistItems = []; // Should be saved in a database
+  constructor(
+    private httpClient: HttpClient,
+  ) { }
 
-  getWishlistItems() {
-    // fetch wishlist items from database
-    return this.wishlistItems;
+  addToWishlist(place: any) {
+    return this.httpClient.post<any>( environment.apiUrl + '/wishlist', place);
   }
 
-  removeFromWishlist(item: any) {
-    // remove item from wishlist in database
-    // const index = this.wishlistItems.indexOf(item);
-    // if (index > -1) {
-    //   this.wishlistItems.splice(index, 1);
-    // }
+  getWishlist() {
+    return this.httpClient.get<any[]>( environment.apiUrl + '/wishlist');
+  }
+
+  deleteFromWishlist(id: number){
+    return this.httpClient.delete<any>( environment.apiUrl + '/wishlist/' + id);
+  }
+
+  getwishlistItem(id: number): Observable<any> {
+    return this.httpClient.get<any>( environment.apiUrl + '/wishlist/' + id);
   }
 }

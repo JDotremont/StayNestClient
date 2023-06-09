@@ -11,13 +11,21 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class AppComponent implements OnInit{
   constructor(
     public carouselStateService: CarouselStateService,
-    public accountMenuStateService: AccountMenuStateService
+    public accountMenuStateService: AccountMenuStateService,
+    private formBuilder: FormBuilder,
     ) { }
 
   ngOnInit() {
     this.carouselStateService.setActive(true);
     this.accountMenuStateService.setActive(false);
 
+    this.searchForm = this.formBuilder.group({
+      country: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      startDate: [new Date(), [Validators.required]],
+      endDate: [new Date(), [Validators.required]],
+      numberOfGuests: [1, [Validators.required]],
+    })    
     let today = new Date();
     let month = today.getMonth();
     let year = today.getFullYear();
@@ -47,10 +55,8 @@ export class AppComponent implements OnInit{
         this.visible = true;
   }
 
-  date!: Date;
   minDate!: Date;
   maxDate!: Date;
 
-  searchForm = new FormGroup({
-  });
+  searchForm!: FormGroup;
 }

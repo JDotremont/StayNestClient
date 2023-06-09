@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { WishlistService } from 'src/app/services/wishlist.service'; 
-import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-wishlist',
   templateUrl: './wishlist.component.html',
   styleUrls: ['./wishlist.component.scss'],
 })
-
-
 export class WishlistComponent implements OnInit {
-  wishlistItems = [];
+  wishlistItems: any[] = [];
 
   constructor(private wishlistService: WishlistService) { }
 
@@ -19,11 +16,14 @@ export class WishlistComponent implements OnInit {
   }
 
   getWishlistItems() {
-    this.wishlistItems = this.wishlistService.getWishlistItems();
+    this.wishlistService.getWishlist().subscribe(items => {
+      this.wishlistItems = items;
+    });
   }
 
   removeFromWishlist(item: any) {
-    this.wishlistService.removeFromWishlist(item);
-    this.getWishlistItems();
+    this.wishlistService.deleteFromWishlist(item.id).subscribe(() => {
+      this.getWishlistItems();
+    });
   }
 }
