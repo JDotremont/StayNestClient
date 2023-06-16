@@ -1,23 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CarouselStateService } from '../../services/carousel-state.service';
 import { AccountMenuStateService } from '../../services/account-menu-state.service';
+import { AuthService } from 'src/app/services/auth.service';
+import  { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit{
+  user: User | null = null;
+
   constructor(
     public accountMenuStateService: AccountMenuStateService,
-    public carouselStateService: CarouselStateService
+    public carouselStateService: CarouselStateService,
+    private authService: AuthService,
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private cd: ChangeDetectorRef
     ) { }
 
-  ngOnInit() {
-    this.accountMenuStateService.setActive(true);
-    this.carouselStateService.setActive(false);
-  }
+    ngOnInit() {
+      this.accountMenuStateService.setActive(true);
+      this.carouselStateService.setActive(false);
+          
+      // get connected user
+      const connectedUser = this.authService.connectedUser;
+      if (connectedUser) {
+        this.userService.getUser(connectedUser.id).subscribe(user => {
+          setTimeout(() => {
+            this.user = user;
+            this.userForm.setValue({
+              firstname: user.firstname,
+              lastname: user.lastname,
+              email: user.email,
+              phone: user.phone
+            }, { emitEvent: false });
+            this.cd.detectChanges();
+          }, 0);
+        });
+      }
+    }
+    
   userForm = new FormGroup({
     firstname: new FormControl([]),
     lastname: new FormControl([]),
@@ -98,5 +125,17 @@ export class AccountComponent implements OnInit{
           {name: 'Outdoor Furniture'},
           {name: 'Patio or Balcony'},
   ];
+
+  updateUser() {
+    if (this.user && this.userForm.valid) {
+      const updatedUser = {...this.user, ...this.userForm.value};
+      this.userService.updateUser(this.user.id, updatedUser).subscribe(user => {
+        this.user = user;
+      });
+    }
+  }
+  
+  
+  
 }
  

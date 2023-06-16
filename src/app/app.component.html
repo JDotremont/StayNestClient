@@ -8,7 +8,7 @@
         <p-button (click)="showDialog()" label="Where're you going next ... ? " icon="pi pi-search" styleClass="p-button-rounded p-button-warning p-button-outlined"></p-button>
         <p-dialog header="Where're you going next ?" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw', height: '50vh' }" [draggable]="false" [resizable]="false">
           <div class="edit-info">
-            <form [formGroup]="searchForm">
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
               <label for="country">Country:</label>
               <input id="country" type="text" formControlName="country">
               <label for="city">City:</label>
@@ -30,14 +30,14 @@
   <div class="menu">
     <button mat-button [matMenuTriggerFor]="menu"><img src="../assets/images/menu.png" width="20%"></button>
     <mat-menu #menu="matMenu">
-    <button mat-menu-item><a routerLink="register">Register</a></button>
-    <button mat-menu-item><a routerLink="login">Login</a></button>
-    <button mat-menu-item><a routerLink="messages">Messages</a></button>
-    <button mat-menu-item><a routerLink="trips">Trips</a></button>
-    <button mat-menu-item><a routerLink="wishlist">Wishlist</a></button>
-    <button mat-menu-item><a routerLink="account">Account</a></button>
+    <button mat-menu-item *ngIf="!isLogged"><a routerLink="register">Register</a></button>
+    <button mat-menu-item *ngIf="!isLogged"><a routerLink="login">Login</a></button>
+    <button mat-menu-item *ngIf="isLogged"><a routerLink="messages">Messages</a></button>
+    <button mat-menu-item *ngIf="isLogged"><a routerLink="trips">Trips</a></button>
+    <button mat-menu-item *ngIf="isLogged"><a routerLink="wishlist">Wishlist</a></button>
+    <button mat-menu-item *ngIf="isLogged"><a routerLink="account">Account</a></button>
     <button mat-menu-item><a routerLink="help">Help</a></button>
-    <button mat-menu-item>Logout</button>
+    <button mat-menu-item (click)="logout()" *ngIf="isLogged">Logout</button>
     </mat-menu>
   </div>
 </div>

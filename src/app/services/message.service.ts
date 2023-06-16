@@ -12,7 +12,7 @@ export class MessageService {
     private httpClient: HttpClient,
   ) { }
 
-  addMessage(message: any) {
+  sendMessage(message: any) {
     return this.httpClient.post<any>( environment.apiUrl + '/message', message);
   }
 
@@ -27,4 +27,11 @@ export class MessageService {
   getMessageById(id: number): Observable<any> {
     return this.httpClient.get<any>( environment.apiUrl + '/message/' + id);
   }
+  
+  // You may want to have a method to get all messages of a specific user, depending on your backend API
+  getMessagesByUserId(userId: number): Observable<any> {
+    return this.httpClient.get<any>( environment.apiUrl + '/user/' + userId + '/messages');
+  }
+  
+  
 }

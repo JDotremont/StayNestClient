@@ -40,6 +40,8 @@ import { PropertyAddComponent } from './pages/property-add/property-add.componen
 import { CalendarModule } from 'primeng/calendar';
 import { PlaceComponent } from './pages/place/place.component';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -87,7 +89,14 @@ import { HttpClientModule } from '@angular/common/http';
     MultiSelectModule,
     CalendarModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    {
+      provide: JWT_OPTIONS,
+      useValue: JWT_OPTIONS
+    },
+    JwtHelperService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

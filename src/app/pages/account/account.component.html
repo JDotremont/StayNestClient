@@ -4,17 +4,16 @@
   </div>
       <h2>Personnal Informations</h2>
       <!-- <p>Nom: {{user.name}}</p> -->
-      <p>Firstname: user.firstname</p>
-      <p>Lastname: user.lastname</p>
+      <p>Firstname: {{user?.firstname}}</p>
+      <p>Lastname: {{user?.lastname}}</p>
       <!-- <p>Email: {{user.email}}</p> -->
-      <p>Email: user.email</p>
-      <p>Phone: user.phone</p>
+      <p>Email: {{user?.email}}</p>
+      <p>Phone: {{user?.phone}}</p>
       <div class="div_button">
       <p-button (click)="showDialog()" icon="pi pi-external-link" label="Update personnal informations" styleClass="p-button-warning"></p-button>
       <p-dialog header="Update my personnal Informations" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw', height: '50vh' }" [draggable]="false" [resizable]="false">
         <div class="edit-info">
-          <form [formGroup]="userForm">
-            <!-- <form > -->
+          <form [formGroup]="userForm" (ngSubmit)="updateUser()">
             <label for="firstname">Firstname:</label>
             <input id="firstname" type="text" formControlName="firstname">
             <label for="lastname">Lastname:</label>

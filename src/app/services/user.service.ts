@@ -14,22 +14,22 @@ export class UserService {
 
   getAll(): Observable<any[]> {
     // get users from API
-    return this.httpClient.get<any[]>( environment.apiUrl + '/users');
+    return this.httpClient.get<any[]>(`${environment.apiUrl}/users`);
   }
 
   add(user: any){
-    return this.httpClient.post<any>( environment.apiUrl + '/users', user);
+    return this.httpClient.post<any>(`${environment.apiUrl}/users`, user);
   }
 
   delete(id: number){
-    return this.httpClient.delete<any>( environment.apiUrl + '/users/' + id);
+    return this.httpClient.delete<any>(`${environment.apiUrl}/users/${id}`);
   }
 
-  update(id: number, user: any): Observable<any> {
+  updateUser(id: number, user: any): Observable<any> {
     return this.httpClient.put<any>(`${environment.apiUrl}/users/${id}`, user);
   }
 
   getUser(id: number): Observable<any> {
-    return this.httpClient.get<any>( environment.apiUrl + '/users/' + id);
+    return this.httpClient.get<any>(`${environment.apiUrl}/users/${id}`);
   }
 }

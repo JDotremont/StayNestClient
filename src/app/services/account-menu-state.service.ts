@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { NgZone } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountMenuStateService {
-  private _isAccount = new BehaviorSubject<boolean>(true);
-  public readonly isAccount$ = this._isAccount.asObservable();
+
+  private _isAccount = new BehaviorSubject<boolean>(false);
+  public isAccount$ = this._isAccount.asObservable();
+
+  constructor(private zone: NgZone) { }
 
   setActive(state: boolean) {
-    this._isAccount.next(state);
+    this.zone.run(() => {
+      this._isAccount.next(state);
+    });
   }
 }

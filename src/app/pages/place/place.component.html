@@ -6,6 +6,7 @@
         <div class="place-sum-infos">
             <p>{{property?.address}}</p>
             <i class="pi pi-heart-fill"></i>
+            <i class="pi pi-comments" (click)="sendMessage()"></i>
         </div>
     </div>
     
@@ -33,23 +34,22 @@
             </div>
             <div class="price-infos">
                 <div class="price">
-                    <p>{{property?.priceByNight}}€ x 3 nights</p> 
-                    <!-- {{booking?.numberofnights}} -->
-                    <p>237€</p>
+                    <p>{{property?.priceByNight}}€ x {{numberOfNights}} nights</p> 
+                    <p>{{priceByNight}}</p>
                 </div>
                 <div class="cleaning">
                     <p>Cleaning fee</p>
-                    <p>20€</p>
+                    <p>{{property?.cleaningFee}} €</p>
                 </div>
                 <div class="service">
                     <p>Service fee</p>
-                    <p>20€</p>
+                    <p>{{serviceFee}} €</p>
                 </div>
             </div>
             <div class="price-total">
                 <div class="total">
                     <p>Total</p>
-                    <p>277€</p>
+                    <p>{{totalPrice}}€</p>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
                         [showIndicatorsOnItem]="showIndicatorsOnItem"
                         [responsiveOptions]="responsiveOptions"
                         [circular]="true"
-                        [containerStyle]="{ 'width': '35rem', 'height': '100%', 'overflow': 'hidden', 'border-radius': '1rem'}">
+                        [containerStyle]="{ 'width': '100%', 'height': '100%', 'overflow': 'hidden', 'border-radius': '1rem'}">
                         <ng-template pTemplate="item" let-item>
                         <img [src]="item" style="height: 100%; display: block; border-radius: 1rem;" />
                         </ng-template>

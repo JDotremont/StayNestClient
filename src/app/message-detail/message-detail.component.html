@@ -1,40 +1,18 @@
 <div class="container">
   <div class="messages">
-    <div class="msg_user">
+    <div class="msg_user" *ngIf="user_message">
       <p class="msg">&nbsp;{{ user_message }}</p>
       <p class="username">{{ username }} : </p>
     </div>
-    <div class="msg_host">
-      <p class="hostname">{{ hostname }} : </p>
-      <p class="msg">&nbsp;{{ host_message }}</p>
-    </div>
-    <div class="msg_user">
-      <p class="msg">&nbsp;{{ user_message }}</p>
-      <p class="username">{{ username }} : </p>
-    </div>
-    <div class="msg_host">
-      <p class="hostname">{{ hostname }} : </p>
-      <p class="msg">&nbsp;{{ host_message }}</p>
-    </div>
-    <div class="msg_user">
-      <p class="msg">&nbsp;{{ user_message }}</p>
-      <p class="username">{{ username }} : </p>
-    </div>
-    <div class="msg_host">
-      <p class="hostname">{{ hostname }} : </p>
-      <p class="msg">&nbsp;{{ host_message }}</p>
-    </div>
-    <div class="msg_user">
-      <p class="msg">&nbsp;{{ user_message }}</p>
-      <p class="username">{{ username }} : </p>
-    </div>
-    <div class="msg_host">
+    <div class="msg_host" *ngIf="host_message">
       <p class="hostname">{{ hostname }} : </p>
       <p class="msg">&nbsp;{{ host_message }}</p>
     </div>
   </div>
   <div class="input">
-    <input type="text" placeholder="Type a message">
-    <button>Send</button>
+    <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+      <input type="text" formControlName="message" placeholder="Type a message">
+      <button type="submit">Send</button>
+    </form>
   </div>
 </div>
